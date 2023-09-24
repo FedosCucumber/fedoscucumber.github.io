@@ -1,0 +1,32 @@
+.header {
+    align-content: center;
+    border: 4px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 220px;
+}
+
+.header img {
+    float: left;
+}
+
+.main_header h1 {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        font-size: 60px;
+}
+
+
+.navigation {
+    align-content: center;
+    text-align: justify;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+.navigation > div {
+    padding: 10px;
+}
