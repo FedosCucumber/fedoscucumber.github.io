@@ -1,3 +1,3 @@
-# web-5sem
-ITMO university web programming course
-M33011, Ivanov Fedor, personal blog.
+# web_fi
+Пивотека с информацией о пиве и возможностью писать обзоры
+![](1.png)

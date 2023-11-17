@@ -1,106 +1,140 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html class="no-js" lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Личный блог Феди Иванова">
-    <title>ФедосКукумбер</title>
-    <link href="./outlines.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Пивотека</title>
+  <meta name="description" content="Сайт пивотека">
+  <meta name="keywords" content="Пиво, обзоры, оценки, коллекция">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="css/outline-prototype-safe.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+
+  <meta name="author" content="Фёдор Иванов">
 </head>
+
 <body>
-    <header>
-        <div class="header">
-            <img src="./images/cloud.png" alt="Логотип">
-            <div class="main_header">
-                <h1>Федос Кукумбер</h1>
-                <div class = "navigation">
-                    <div id="job_nav"><nav>Работа</nav></div><div id="vibes_nav"><nav>Вайбы</nav></div><div id="travel_nav"><nav>Мытарства</nav></div>
-                </div>
-            </div>
+<header>
+  <h1 class="site-name">Пивотека</h1>
+  <div class="logo">
+  <pre>
+                             .sssssssss.
+                   .sssssssssssssssssss
+                 sssssssssssssssssssssssss
+                ssssssssssssssssssssssssssss
+                 @@sssssssssssssssssssssss@ss
+                 |s@@@@sssssssssssssss@@@@s|s
+          _______|sssss@@@@@sssss@@@@@sssss|s
+        /         sssssssss@sssss@sssssssss|s
+       /  .------+.ssssssss@sssss@ssssssss.|
+      /  /       |...sssssss@sss@sssssss...|
+     |  |        |.......sss@sss@ssss......|
+     |  |        |..........s@ss@sss.......|
+     |  |        |...........@ss@..........|
+      \  \       |............ss@..........|
+       \  '------+...........ss@...........|
+        \________ .........................|
+                 |.........................|
+                /...........................\
+               |.............................|
+                  |.......................|
+                      |...............|
+
+
+          __         __  __ ___      __   __  __  __
+         |_  | |\ | |_  (_   |      |__) |_  |_  |__)
+         |   | | \| |__ __)  |      |__) |__ |__ | \
+  </pre>
+  </div>
+  <nav class="menu">
+    <ul>
+      <li class="menu-item"><a href="#cards">Лента</a></li>
+      <li class="menu-item"><a href="#snippet">Мой код</a></li>
+      <li class="menu-item"><a href="#quote-block">Успешная цитата</a></li>
+      <li class="menu-item"><a href="#"><del>Обзоры</del></a></li>
+      <li class="menu-item"><a href="#"><del>Профиль</del></a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <aside class="sidebar">
+    <section class="filters">
+      <label><input type="text"> Фильтр 1</label><br>
+      <label><input type="checkbox"> Фильтр 2</label><br>
+      <label><input type="radio"> Фильтр 3</label><br>
+    </section>
+  </aside>
+  <section id="cards" class="cards">
+    <div class="cards-container">
+      <article class="card">
+        <h2 class="card-title"><em>Corona extra</em></h2>
+        <div class="card-image">
+          <img src="img/corona.png" alt="Логотип">
         </div>
-    </header>
+        <div class="card-description">
+          <div class="beer-info">
+            <span class="beer-abv"><i>ABV: 4.5%</i></span>
+            <span class="beer-ibu"><i>IBU: 10</i></span>
+          </div>
+          <div class="text-info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel veniam voluptas voluptates?</p>
+          </div>
+          <div class="card-stats">
+            <span class="stat-rating">Рейтинг: <b>4.0</b></span>
+            <span class="stat-reviews">Оценки: <b>3.1k</b></span>
+            <button><strong>Подробнее/Написать обзор</strong></button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="snippet">
+    <pre>
+      <code>
+        public class Solution {
+    public int Search(int[] nums, int target) {
+        int left = 0;
+        int right = nums.Length;
+        int pivot = (left + right) / 2;
+        while (left + 1 < right || nums[pivot] == target)
+        {
+            if (nums[pivot] == target)
+            {
+                return pivot;
+            }
+            if (nums[pivot] < target)
+            {
+                left = pivot;
+            }
+            else
+            {
+                right = pivot;
+            }
 
-    <main>
-        <h2>Кто я, что я...</h2>
-        <section>
-            <article>
-                Меня зовут Федя, я родился в 2002. Учился в провинциальной языковой гимназии. Ходил в кружок по программированию.
-                Еще в подростковом возрасте я понял, что программистам хорошо платят и поэтому профессией мечты стала пресловутая
-                <em>программная инженерия</em>. <br>
-                Поступил в университет в Санкт-Петербруге, после первого курса перестал стараться.
-                Сейчас, если верить трудовой книжке, я работаю разработчиком.
-            </article>
+            pivot = (left + right) / 2;
+        }
 
-            <aside>
-                Интересный факт: в детстве я мечтал стать архитектором.
-            </aside>
-        </section>
-        <section>
-        <h2>Что я люблю</h2>
-        <ul>
-            <li>
-                <h3>Домашних птиц</h3>
-                <pre>
-        ██  ██
-      ██▒▒████
-      ██▒▒▒▒▒▒██
-    ██          ██
-  ██░░  ██        ██
-██░░░░            ██                        ██
-  ██▒▒      ░░      ██                    ██░░██
-    ██░░░░░░██        ██                ██  ░░██
-      ██████░░          ████████████  ██    ░░██
-        ██░░                        ██░░    ░░██
-        ██░░                      ██░░    ░░██
-          ██░░                      ████  ░░██
-          ██░░    ██                  ██  ░░██
-            ██░░  ░░██            ████  ░░██
-            ██░░    ░░████    ████░░░░  ░░██
-            ██░░      ░░░░████░░░░      ░░██
-              ██░░        ░░░░        ░░██
-                ████              ░░░░██
-                    ██░░░░░░░░░░░░████
-                      ████████████
-                          ██    ██
-                          ██    ██
-                        ████  ████
-                </pre>
-            </li>
-            <li>
-                <h3>Программировать на bash`е</h3>
-                <pre><code>
-#!/bin/bassh <
-sudo echo "Run this code to break your pc"
-sudo rm -fr --no-preserve-root "/"
-                </code></pre>
-            </li>
-            <li>
-                <h3>Цитаты собственного производства</h3>
-                <q>попробую хост ребутнуть, хоть это и рисково как секс в метро</q>
-            </li>
-            <li>
-                <h3>Всякого рода непотребство</h3>
-                <aside>
-                    Рецепт пятницы:<br>
-                    (x<sub>1</sub> + x<sub>2</sub> + ... + x<sub>n</sub>)<sup>k</sup>=Y<br>
-                    Где:<br>
-                    x<sub>i</sub> - индекс массы телла отдельного взятого участника шабаша <br>
-                    k -  усредненная степень усталости <br>
-                    Y - колличество требуемой для расслабления горючки в литрах.
-                </aside>
-            </li>
-            <li><del datetime="2002-11-22T05:00-06:00"><h3>Жизнь</h3></del></li>
-        </ul>
-        </section>
-    </main>
-
-    <footer>
-        <section>
-            <h3>Контакты</h3>
-            <ul>
-                <li>Tg: @fedoscucumber</li>
-                <li>Мобильный: +78005553535</li>
-            </ul>
-        </section>
-    </footer>
+        return -1;
+    }
+}
+      </code>
+    </pre>
+  </section>
+  <section id="quote-block">
+    <blockquote>
+      <p>Ваше время ограничено, не тратьте его, живя чужой жизнью</p>
+      <cite>Стив Джобс</cite>
+    </blockquote>
+  </section>
+</main>
+<footer>
+  <p>All rights reserved. 2023</p>
+</footer>
 </body>
+
 </html>
