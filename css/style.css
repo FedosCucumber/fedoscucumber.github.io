@@ -1,0 +1,263 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__wrapper {
+  background-color: #ffc000;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 0.2vw 0.5vw, rgba(0, 0, 0, 0.23) 0 0.2vw 0.5vw;
+}
+
+.header__logo {
+  background-color: black;
+  height: 100%;
+}
+
+.text {
+  font-family: 'Uni Sans Demo', sans-serif;
+  color: black;
+  font-weight: 500;
+  font-size: 1.2vw;
+}
+
+.text_small {
+  font-size: 1vw;
+}
+
+.header__name {
+  text-align: center;
+  font-size: 2vw;
+  margin-left: 2vw;
+  font-weight: 800;
+}
+
+.menu {
+  margin-left: 1vw;
+  flex: 1;
+  max-width: 25%;
+  align-items: center;
+}
+
+.menu__list {
+  display: flex;
+  margin: 0.2vw 0 0 0;
+  padding: 0;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+  list-style: none;
+}
+
+.menu__item {
+  margin-left: 1vw;
+  box-sizing: content-box;
+}
+
+.menu__item a {
+  text-decoration: none;
+  padding: 0.75vw;
+}
+
+.button-link {
+  color: #ffc000;
+}
+
+.button-link_hover {
+  background-size: 300% 100%;
+  border-radius: 0.7vw;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.button-link_hover:hover {
+  background-position: 100% 0;
+  color: white;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.button-link_hover.button-link {
+  background-image: linear-gradient(to right, #0a0b0c, #30363a, #1e3949, #3a3352);
+  box-shadow: 0 0.15vw 0.15vw 0 rgba(63, 63, 63, 0.75);
+}
+
+.preformat {
+  font-size: 0.2vw;
+  padding-right: 0.5vw;
+  font-weight: bold;
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+}
+
+.sidebar {
+  top: 0;
+  width: 15%;
+  margin-top: 1vw;
+  height: fit-content;
+  position: sticky;
+  float: left;
+}
+
+.sidebar_border {
+  box-shadow: rgba(9, 30, 66, 0.25) 0 0.1vw 0.1vw, rgba(9, 30, 66, 0.13) 0 0 0.1vw 0.1vw;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5vw;
+}
+
+.filter__input {
+  max-width: 100%;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  max-height: 1.5vw;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1vw;
+  max-width: 100%;
+  text-align: center;
+}
+
+
+
+.filter input[type=text] {
+  max-width: 80%;
+  height: 2vw;
+}
+
+.card_border:nth-child(even) {
+  box-shadow: rgb(255, 192, 0) 0 0.15vw 0.3vw, rgba(0, 0, 0, 0.23) 0 0.15vw 0.3vw;
+}
+
+.cards__container {
+  margin-left: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: center;
+  align-content: center;
+  padding: 1vw;
+}
+
+.card__content {
+  padding: 0.25vw;
+}
+
+.card_border {
+  box-shadow: rgba(9, 30, 66, 0.25) 0 0.3vw 0.3vw, rgba(9, 30, 66, 0.13) 0 0 0.3vw 0.3vw;
+}
+
+.card {
+  display: flex;
+  margin-left: 1.5vw;
+  margin-bottom: 1.5vw;
+  flex-direction: column;
+  width: 30%;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.card__title {
+  text-align: center;
+  margin-left: 0.75vw;
+}
+
+.card__title h2 {
+  margin: 0;
+}
+
+.card__image {
+  width: 25%;
+}
+
+.card__image img {
+  border-radius: 5vw;
+  max-width: 100%;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+}
+
+.extend {
+  color: #ffc000;
+  align-self: center;
+  margin-bottom: 0.2vw;
+}
+
+.extend a {
+  text-decoration: none;
+}
+
+.extend button {
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0 2vw;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.extend__button {
+  height: 2vw;
+  align-self: center;
+  cursor: pointer;
+}
+
+.extra {
+  background-color: #ffc000;
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  visibility: hidden;
+}
+
+.extra:target {
+  visibility: visible;
+}
+
+.footer {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .footer {
+    flex-shrink: 0;
+    background-color: #ffc000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 0.2vw 0.5vw, rgba(0, 0, 0, 0.23) 0.2vw 0 0.5vw;
+  }
+}
