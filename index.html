@@ -4,10 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>Жидкотека</title>
-  <meta name="description" content="Сайт жидкотека">
-  <meta name="keywords" content="Жидкости, обзоры, оценки, коллекция">
+  <meta name="description" content="Сайт пивотека">
+  <meta name="keywords" content="Пиво, обзоры, оценки, коллекция">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <script src="js/loadtime.js"></script>
+  <script src="js/active_page.js"></script>
+    <script src="js/fetch.js"></script>
   <link rel="apple-touch-icon" href="favicon.ico">
   <link href="https://fonts.cdnfonts.com/css/uni-sans-regular?styles=42508,42506" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
@@ -51,12 +54,12 @@
          |   | | \| |__ __)  |      |__) |__ |__ | \
   </pre>
     </div>
-    <h1 class="header__name text">Жидкотека</h1>
+    <h1 class="header__name text text__big">Жидкотека</h1>
     <nav class="menu">
       <ul class="menu__list">
-        <li class="menu__item text"><a class="button-link button-link_hover" href="#cards">Лента</a></li>
-        <li class="menu__item text"><a class="button-link button-link_hover" href="#cards">Обзоры</a></li>
-        <li class="menu__item text"><a class="button-link button-link_hover" href="#cards">Профиль</a></li>
+        <li class="menu__item text text__big"><a class="button-link button-link_hover" href="index.html">Лента</a></li>
+        <li class="menu__item text text__big"><a class="button-link button-link_hover" href="reviews.html">Обзоры</a></li>
+        <li class="menu__item text text__big"><a class="button-link button-link_hover" href="#">Профиль</a></li>
       </ul>
     </nav>
   </div>
@@ -80,179 +83,12 @@
   </aside>
   <section id="cards" class="cards">
     <div class="cards__container">
-      <article class="card card_border">
-        <div class="card__content">
-          <div class="card__header">
-            <div class="card__image">
-              <img src="img/corona.png" alt="Логотип">
-            </div>
-            <div class="card__title text">
-              <h4>Corona extra</h4>
-            </div>
-          </div>
-          <div class="card__description">
-            <div class="info text text_small">
-              <span class="info__abv"><i>ABV: 4.5%</i></span>
-              <span class="info__ibu"><i>IBU: 10</i></span>
-            </div>
-            <div class="text-description text text_small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor
-                dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel
-                veniam
-                voluptas voluptates?</p>
-            </div>
-            <div class="stats text text_small">
-              <span class="stats__rating">Рейтинг: <b>4.0</b></span>
-              <span class="stats__reviews">Оценки: <b>3.1k</b></span>
-            </div>
-            <div class="extend text">
-              <a class="button-link button-link_hover" href="#unavailable">
-                <button class="extend__button">Подробнее</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="card card_border">
-        <div class="card__content">
-          <div class="card__header">
-            <div class="card__image">
-              <img src="img/corona.png" alt="Логотип">
-            </div>
-            <div class="card__title text">
-              <h4>Corona extra</h4>
-            </div>
-          </div>
-          <div class="card__description">
-            <div class="info text text_small">
-              <span class="info__abv"><i>ABV: 4.5%</i></span>
-              <span class="info__ibu"><i>IBU: 10</i></span>
-            </div>
-            <div class="text-description text text_small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor
-                dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel
-                veniam
-                voluptas voluptates?</p>
-            </div>
-            <div class="stats text text_small">
-              <span class="stats__rating">Рейтинг: <b>4.0</b></span>
-              <span class="stats__reviews">Оценки: <b>3.1k</b></span>
-            </div>
-            <div class="extend text">
-              <a class="button-link button-link_hover" href="#unavailable">
-                <button class="extend__button">Подробнее</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="card card_border">
-        <div class="card__content">
-          <div class="card__header">
-            <div class="card__image">
-              <img src="img/corona.png" alt="Логотип">
-            </div>
-            <div class="card__title text">
-              <h4>Corona extra</h4>
-            </div>
-          </div>
-          <div class="card__description">
-            <div class="info text text_small">
-              <span class="info__abv"><i>ABV: 4.5%</i></span>
-              <span class="info__ibu"><i>IBU: 10</i></span>
-            </div>
-            <div class="text-description text text_small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor
-                dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel
-                veniam
-                voluptas voluptates?</p>
-            </div>
-            <div class="stats text text_small">
-              <span class="stats__rating">Рейтинг: <b>4.0</b></span>
-              <span class="stats__reviews">Оценки: <b>3.1k</b></span>
-            </div>
-            <div class="extend text">
-              <a class="button-link button-link_hover" href="#unavailable">
-                <button class="extend__button">Подробнее</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="card card_border">
-        <div class="card__content">
-          <div class="card__header">
-            <div class="card__image">
-              <img src="img/corona.png" alt="Логотип">
-            </div>
-            <div class="card__title text">
-              <h4>Corona extra</h4>
-            </div>
-          </div>
-          <div class="card__description">
-            <div class="info text text_small">
-              <span class="info__abv"><i>ABV: 4.5%</i></span>
-              <span class="info__ibu"><i>IBU: 10</i></span>
-            </div>
-            <div class="text-description text text_small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor
-                dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel
-                veniam
-                voluptas voluptates?</p>
-            </div>
-            <div class="stats text text_small">
-              <span class="stats__rating">Рейтинг: <b>4.0</b></span>
-              <span class="stats__reviews">Оценки: <b>3.1k</b></span>
-            </div>
-            <div class="extend text">
-              <a class="button-link button-link_hover" href="#unavailable">
-                <button class="extend__button">Подробнее</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-      <article class="card card_border">
-        <div class="card__content">
-          <div class="card__header">
-            <div class="card__image">
-              <img src="img/corona.png" alt="Логотип">
-            </div>
-            <div class="card__title text">
-              <h4>Corona extra</h4>
-            </div>
-          </div>
-          <div class="card__description">
-            <div class="info text text_small">
-              <span class="info__abv"><i>ABV: 4.5%</i></span>
-              <span class="info__ibu"><i>IBU: 10</i></span>
-            </div>
-            <div class="text-description text text_small">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis corporis delectus distinctio dolor
-                dolore ea eligendi excepturi fugiat magni, maiores molestiae molestias, obcaecati odit quo sit vel
-                veniam
-                voluptas voluptates?</p>
-            </div>
-            <div class="stats text text_small">
-              <span class="stats__rating">Рейтинг: <b>4.0</b></span>
-              <span class="stats__reviews">Оценки: <b>3.1k</b></span>
-            </div>
-            <div class="extend text">
-              <a class="button-link button-link_hover" href="#unavailable">
-                <button class="extend__button">Подробнее</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
-    <div id="unavailable" class="extra card_border">
-      <p class="text">Эта функциональность не поддерживаетя в текущей версии сайта</p>
     </div>
   </section>
 </main>
 <footer class="footer">
   <p class="text">All rights reserved. 2023</p>
+  <p class="text" id="pageLoadTime"></p>
 </footer>
 </body>
 
