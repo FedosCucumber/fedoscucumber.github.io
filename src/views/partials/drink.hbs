@@ -1,0 +1,36 @@
+<article class="card card_border" id={{id}}>
+  <div class="card__content">
+    <div class="card__header">
+      <div class="card__image">
+        <img src="{{imageUrl}}" alt="">
+      </div>
+      <div class="card__title text">
+        <h4>{{name}}</h4>
+      </div>
+    </div>
+    <div class="card__description">
+      <div class="info text text_small">
+        <span class="info__abv">ABV: {{abv}}</span>
+        <span class="info__ibu">IBU: {{ibu}}%</span>
+      </div>
+      <div class="text-description text text_small">
+        <p>{{description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="stats">
+    <span class="stats__rating text text_small">Оценка: <span class="stats__rating--star">{{> star}}</span> <b class="stats__rating--rating">{{avgRating}}</b></span>
+    {{#if session}}
+    <div class="rate">
+			<button class="rate__button {{#if (greaterOrEqual userRating 1)}}rate__button--active{{/if}}" onclick="rateDrink({{id}}, 1)">{{> star}}</button>
+			<button class="rate__button {{#if (greaterOrEqual userRating 2)}}rate__button--active{{/if}}" onclick="rateDrink({{id}}, 2)">{{> star}}</button>
+			<button class="rate__button {{#if (greaterOrEqual userRating 3)}}rate__button--active{{/if}}" onclick="rateDrink({{id}}, 3)">{{> star}}</button>
+			<button class="rate__button {{#if (greaterOrEqual userRating 4)}}rate__button--active{{/if}}" onclick="rateDrink({{id}}, 4)">{{> star}}</button>
+			<button class="rate__button {{#if (greaterOrEqual userRating 5)}}rate__button--active{{/if}}" onclick="rateDrink({{id}}, 5)">{{> star}}</button>
+    </div>
+    {{/if}}
+  </div>
+  {{#if session}}
+	<button id="card-delete" class="card__delete" onclick="deleteDrink({{id}})">Удалить</button>
+  {{/if}}
+</article>

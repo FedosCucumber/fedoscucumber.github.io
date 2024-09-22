@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    <script src="js/fill_form.js"></script>
+    {{>stylesbundle}}
+</head>
+
+<body>
+{{> header}}
+<main class="main">
+    <form id="cardForm" class="form card_border">
+        <div class="form__container">
+            <label for="name" class="form__label text">Название:</label>
+            <input type="text" id="name" class="form__input text" required>
+
+            <label for="abv" class="form__label text">ABV:</label>
+            <input type="text" id="abv" class="form__input text" required>
+
+            <label for="ibu" class="form__label text">IBU:</label>
+            <input type="text" id="ibu" class="form__input text" required>
+
+            <label for="score" class="form__label text">Оценка:</label>
+            <input type="text" id="score" class="form__input text" required>
+
+            <label for="description" class="form__label text">Описание:</label>
+            <textarea id="description" class="form__input text" rows="3" required></textarea>
+
+            <label id="logoLabel" for="logo" class="form__label form__image text">Загрузить логотип</label>
+            <input type="file" id="logo" class="form__input text">
+
+            <label id="imageLabel" for="images" class="form__label form__image text">Загрузить изображение</label>
+            <input type="file" id="images" class="form__input text" multiple>
+
+            <div class="extend text">
+                <a class="button-link button-link_hover text" href="#">
+                    <button class="extend__button" id="form-submit" type="submit">Загрузить обзор</button>
+                </a>
+            </div>
+        </div>
+    </form>
+    <section id="cards" class="cards">
+        <div class="cards__container">
+        </div>
+    </section>
+</main>
+{{> footer}}
+</body>
+
+</html>

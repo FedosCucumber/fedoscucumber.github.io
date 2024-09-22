@@ -1,0 +1,53 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+  {{!-- <script src="js/fetch.js"></script> --}}
+  {{> stylesbundle}}
+</head>
+
+<body>
+{{> header session=session}}
+<main class="main">
+  {{!-- <aside class="sidebar sidebar_border">
+    <section class="filters text">
+      <div class="filter">
+        <label for="filter1" class="filter__text">Фильтр 1</label>
+        <input id="filter1" class="filter__input" type="text">
+      </div>
+      <div class="filter">
+        <label for="filter2" class="filter__text">Фильтр 2</label>
+        <input id="filter2" class="filter__input" type="checkbox">
+      </div>
+      <div class="filter">
+        <label for="filter3" class="filter__text">Фильтр 3</label>
+        <input id="filter3" class="filter__input" type="radio">
+      </div>
+    </section>
+  </aside> --}}
+  <section id="cards" class="cards">
+    <div class="cards__container">
+        {{#if session}}
+
+        {{#each drinks}}
+        {{> drink name=name abv=abv ibu=ibu description=description avgRating=avgRating userRating=userRating session=true }}
+        {{/each}}
+
+        {{else}}
+
+        {{#each drinks}}
+        {{> drink name=name abv=abv ibu=ibu description=description avgRating=avgRating userRating=userRating session=false }}
+        {{/each}}
+        
+        {{/if}}
+
+        {{#if session}}
+        {{> drinkCreate}}
+        {{/if}}
+    </div>
+  </section>
+</main>
+{{> footer}}
+</body>
+
+</html>

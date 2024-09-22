@@ -1,0 +1,42 @@
+<article class="card card_border">
+  <form id="create-drink" class="card__content card-create">
+    <h3 class="card-create__title">Добавить напиток</h3>
+    <label for="newdrink-image">Загрузить изображение</label>
+    <input
+        id="newdrink-image"
+        class="card-create__item"
+        type="file"
+        accept="image/*"
+    >
+    <input 
+        id="newdrink-name" 
+        class="card-create__item" 
+        type="text" 
+        placeholder="Название"
+    >
+    <input 
+        id="newdrink-abv" 
+        class="card-create__item" 
+        type="text" 
+        placeholder="ABV"
+    >
+    <input 
+        id="newdrink-ibu" 
+        class="card-create__item" 
+        type="text" 
+        placeholder="IBU"
+    >
+    <textarea 
+        id="newdrink-description" 
+        class="card-create__item" 
+        type="text" 
+        placeholder="Описание"
+        style="min-height: 20px;"
+    ></textarea>
+    <button 
+        id="newdrink-submit" 
+        type="submit" 
+        class="card-create__submit"
+    >Подтвердить</button>
+  </form>
+</article>
