@@ -12,8 +12,8 @@ import { WebsocketGateway } from './websocket/websocket.gateway';
   imports: [
     DrinksModule,
     AuthModule.forRoot({
-      connectionURI: "https://st-dev-333e1ef0-0e26-11ef-9c89-4d0da2ea0d9d.aws.supertokens.io", //Supertokens
-      apiKey: "74LaUAizR3dCvkaUPJnbVHwKcv", //Supertokens
+      connectionURI: "https://st-dev-95de4780-7c38-11ef-b5a5-67f4d59aff6d.aws.supertokens.io", //Supertokens
+      apiKey: "f441rD6UA6bZbkvZkdmSV3EC5p", //Supertokens
       appInfo: {
         appName: "web-fi",
         apiDomain: "http://localhost:3000",
