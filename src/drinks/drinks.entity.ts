@@ -58,17 +58,21 @@ export class CreateDrinkDto {
   name: string;
 
   @IsNotEmpty()
+  @ApiProperty()
   description: string;
 
   @IsNumber()
   @IsNotEmpty()
+  @ApiProperty()
   abv: number;
 
   @IsNumber()
   @IsNotEmpty()
+  @ApiProperty()
   ibu: number;
 
   @IsString()
   @IsNotEmpty()
+  @ApiProperty()
   imageUrl: string;
 }
