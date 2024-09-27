@@ -55,24 +55,35 @@ export class RateDrinkDto {
 
 export class CreateDrinkDto {
   @IsNotEmpty()
+  @ApiProperty({
+    description: "Name",
+  })
   name: string;
 
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: "Description",
+  })
   description: string;
 
   @IsNumber()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: "ABV",
+  })
   abv: number;
 
   @IsNumber()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: "IBU",
+  })
   ibu: number;
 
   @IsString()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: "imageUrl",
+  })
   imageUrl: string;
 }
