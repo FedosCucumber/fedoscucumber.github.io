@@ -1,7 +1,7 @@
 function auth_init() {
     supertokens.init({
         appInfo: {
-            apiDomain: "http://localhost:3000",
+            apiDomain: "https://fedoscucumber-github-io.onrender.com",
             apiBasePath: "/auth",
             appName: "web-fi"
         },
@@ -119,7 +119,7 @@ async function refreshSession() {
     } catch (error) {}
 }
 
-const websocket = io("http://localhost:3000")
+const websocket = io("https://fedoscucumber-github-io.onrender.com")
 
 websocket.on("connect", () => {
     console.log("%cWS%cWebsocket connected", "background: linear-gradient(45deg, #8600ff, #e91e63); border-radius: 9px; padding: 5px 10px;", "padding-left: 5px")

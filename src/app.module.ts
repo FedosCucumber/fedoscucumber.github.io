@@ -16,8 +16,8 @@ import { WebsocketGateway } from './websocket/websocket.gateway';
       apiKey: "f441rD6UA6bZbkvZkdmSV3EC5p", //Supertokens
       appInfo: {
         appName: "web-fi",
-        apiDomain: "http://localhost:3000",
-        websiteDomain: "http://localhost:3000",
+        apiDomain: "https://fedoscucumber-github-io.onrender.com",
+        websiteDomain: "https://fedoscucumber-github-io.onrender.com",
         apiBasePath: "/auth",
         websiteBasePath: "/auth"
       },
