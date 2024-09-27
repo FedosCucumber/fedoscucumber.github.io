@@ -1,13 +1,14 @@
-import { Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma.service';
-import { CreateDrinkDto, drinkDto } from './drinks.entity';
-import { Drinks } from '@prisma/client';
+import {Injectable} from '@nestjs/common';
+import {PrismaService} from 'src/prisma.service';
+import {CreateDrinkDto, drinkDto} from './drinks.entity';
+import {Drinks} from '@prisma/client';
 
 @Injectable()
 export class DrinksService {
   constructor(
     private prisma: PrismaService
-  ) {}
+  ) {
+  }
 
   async getDrinks() {
     const drinks = await this.prisma.drinks.findMany({
@@ -16,12 +17,12 @@ export class DrinksService {
       }
     });
 
-		return drinks.map(drink => {
+    return drinks.map(drink => {
       const ratingCount = drink.ratings.length;
       const avgRating = ratingCount > 0
         ? drink.ratings.reduce((sum, rating) => sum + rating.rating, 0) / ratingCount
         : 0;
-      
+
       const roundedAvgRating = Math.round(avgRating * 10) / 10;
 
       return {
@@ -34,12 +35,12 @@ export class DrinksService {
 
   async createDrink(createDrinkDto: CreateDrinkDto) {
     const newDrink = new drinkDto()
-		
-		newDrink.name = createDrinkDto.name
-		newDrink.description = createDrinkDto.description
-		newDrink.abv = createDrinkDto.abv
-		newDrink.ibu = createDrinkDto.ibu
-		newDrink.imageUrl = createDrinkDto.imageUrl
+
+    newDrink.name = createDrinkDto.name
+    newDrink.description = createDrinkDto.description
+    newDrink.abv = createDrinkDto.abv
+    newDrink.ibu = createDrinkDto.ibu
+    newDrink.imageUrl = createDrinkDto.imageUrl
 
     return this.prisma.drinks.create({
       data: newDrink
@@ -62,7 +63,7 @@ export class DrinksService {
         ratingCount: ratingCount,
       };
     });
-	}
+  }
 
   async deleteDrink(DrinkId: number): Promise<drinkDto> {
     await this.prisma.drinkRating.deleteMany({
@@ -77,11 +78,11 @@ export class DrinksService {
       }
     })
   }
-  
+
   async rateDrink(drinkId: number, userId: string, rating: number): Promise<void> {
     await this.prisma.drinkRating.upsert({
       where: {
-        drinkId_userId: { drinkId, userId },
+        drinkId_userId: {drinkId, userId},
       },
       update: {
         rating,
@@ -94,24 +95,24 @@ export class DrinksService {
     });
   }
 
-	async getUserRating(drinkId, userId) {
-		const rating = await this.prisma.drinkRating.findUnique({
-			where: {
-				drinkId_userId: { drinkId, userId }
-			}
-		})
+  async getUserRating(drinkId, userId) {
+    const rating = await this.prisma.drinkRating.findUnique({
+      where: {
+        drinkId_userId: {drinkId, userId}
+      }
+    })
 
-		if (rating) {
-			return rating["rating"]
-		}
+    if (rating) {
+      return rating["rating"]
+    }
 
-		return 0
-	}
+    return 0
+  }
 
-	async updateDrinkImage(drinkId: number, imageUrl: string) {
+  async updateDrinkImage(drinkId: number, imageUrl: string) {
     return this.prisma.drinks.update({
-      where: { id: drinkId },
-      data: { imageUrl },
+      where: {id: drinkId},
+      data: {imageUrl},
     });
   }
 }

@@ -1,12 +1,12 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { PrismaService } from './prisma.service';
-import { DrinksController } from './drinks/drinks.controller';
-import { DrinksModule } from './drinks/drinks.module';
-import { DrinksService } from './drinks/drinks.service';
-import { AuthModule } from './auth/auth.module';
-import { WebsocketGateway } from './websocket/websocket.gateway';
+import {Module} from '@nestjs/common';
+import {AppController} from './app.controller';
+import {AppService} from './app.service';
+import {PrismaService} from './prisma.service';
+import {DrinksController} from './drinks/drinks.controller';
+import {DrinksModule} from './drinks/drinks.module';
+import {DrinksService} from './drinks/drinks.service';
+import {AuthModule} from './auth/auth.module';
+import {WebsocketGateway} from './websocket/websocket.gateway';
 
 @Module({
   imports: [
@@ -33,4 +33,5 @@ import { WebsocketGateway } from './websocket/websocket.gateway';
     WebsocketGateway
   ],
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -1,9 +1,10 @@
-import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from '@nestjs/common';
-import { Observable } from 'rxjs';
+import {CanActivate, ExecutionContext, Injectable, UnauthorizedException} from '@nestjs/common';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class AuthWebsocketGuard implements CanActivate {
-  constructor(private readonly verifyOptions?: any) {}
+  constructor(private readonly verifyOptions?: any) {
+  }
 
   canActivate(context: ExecutionContext): boolean | Promise<boolean> | Observable<boolean> {
     const client = context.switchToWs().getClient();
@@ -13,6 +14,6 @@ export class AuthWebsocketGuard implements CanActivate {
       throw new UnauthorizedException('Anuthorized');
     }
 
-	return true
+    return true
   }
 }

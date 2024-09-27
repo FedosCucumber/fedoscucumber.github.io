@@ -1,5 +1,5 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { SupertokensService } from './supertokens.service';
+import {Test, TestingModule} from '@nestjs/testing';
+import {SupertokensService} from './supertokens.service';
 
 describe('SupertokensService', () => {
   let service: SupertokensService;

@@ -1,21 +1,22 @@
-import { UseGuards } from '@nestjs/common';
-import { ConnectedSocket, SubscribeMessage, WebSocketGateway, WebSocketServer, MessageBody } from '@nestjs/websockets';
-import { Socket, Server } from 'socket.io';
-import { CreateDrinkDto } from 'src/drinks/drinks.entity';
-import { DrinksService } from 'src/drinks/drinks.service';
+import {UseGuards} from '@nestjs/common';
+import {ConnectedSocket, SubscribeMessage, WebSocketGateway, WebSocketServer, MessageBody} from '@nestjs/websockets';
+import {Socket, Server} from 'socket.io';
+import {CreateDrinkDto} from 'src/drinks/drinks.entity';
+import {DrinksService} from 'src/drinks/drinks.service';
 import Session from 'supertokens-node/recipe/session';
-import { AuthWebsocketGuard } from "src/auth/authwebsocket.guard"
+import {AuthWebsocketGuard} from "src/auth/authwebsocket.guard"
 
 @WebSocketGateway()
 export class WebsocketGateway {
   @WebSocketServer() server: Server;
 
-  constructor(private drinksService: DrinksService) {}
-  
+  constructor(private drinksService: DrinksService) {
+  }
+
   @SubscribeMessage("createDrink")
   @UseGuards(new AuthWebsocketGuard())
   async handleCreateDrink(
-    @MessageBody() data: CreateDrinkDto, 
+    @MessageBody() data: CreateDrinkDto,
     @ConnectedSocket() client: Socket
   ): Promise<void> {
     if (data) {
@@ -42,8 +43,8 @@ export class WebsocketGateway {
     @MessageBody() data: {
       drinkId: number,
       rating: number
-  },
-  @ConnectedSocket() client: Socket): Promise<void> {
+    },
+    @ConnectedSocket() client: Socket): Promise<void> {
     const accessToken = client.handshake.headers.cookie.split("; ")[0].split("sAccessToken=")[1];
 
     if (!accessToken) {

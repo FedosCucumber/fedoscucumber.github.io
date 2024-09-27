@@ -1,4 +1,4 @@
-import { AuthFilter } from './auth.filter';
+import {AuthFilter} from './auth.filter';
 
 describe('AuthFilter', () => {
   it('should be defined', () => {

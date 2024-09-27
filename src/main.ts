@@ -1,11 +1,11 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import {NestFactory} from '@nestjs/core';
+import {AppModule} from './app.module';
 import * as hbs from 'hbs';
-import { join, resolve } from 'path';
-import { NestExpressApplication } from '@nestjs/platform-express';
-import { ValidationPipe } from '@nestjs/common';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { SupertokensExceptionFilter } from './auth/auth.filter';
+import {join, resolve} from 'path';
+import {NestExpressApplication} from '@nestjs/platform-express';
+import {ValidationPipe} from '@nestjs/common';
+import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
+import {SupertokensExceptionFilter} from './auth/auth.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -19,13 +19,14 @@ async function bootstrap() {
   hbs.registerPartials(resolve('./src/views/partials'));
 
   hbs.registerHelper('greaterOrEqual', function (value, compare) {
-		return value >= compare;
-	});
+    return value >= compare;
+  });
 
   app.useGlobalPipes(new ValidationPipe());
   SwaggerModule.setup('swagger', app, swaggerDoucment);
   app.useGlobalFilters(new SupertokensExceptionFilter());
-  
+
   await app.listen(3000);
 }
+
 bootstrap();
