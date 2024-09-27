@@ -42,8 +42,11 @@ export class AppController {
 
   @Get('reviews')
   @Render('reviews')
-  getReviews() {
-    return
+  async getReviews(@Req() req: Request, @Res() res: Response) {
+    const session = await Session.getSession(req, res, { sessionRequired: false })
+    return {
+      session: session != undefined
+    }
   }
 
 	@Get('login')
