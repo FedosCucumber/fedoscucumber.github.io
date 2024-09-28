@@ -6,6 +6,7 @@ import {NestExpressApplication} from '@nestjs/platform-express';
 import {ValidationPipe} from '@nestjs/common';
 import {DocumentBuilder, SwaggerModule} from '@nestjs/swagger';
 import {SupertokensExceptionFilter} from './auth/auth.filter';
+import {TimingInterceptor} from "./timing.interceptor";
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
@@ -25,6 +26,8 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
   SwaggerModule.setup('swagger', app, swaggerDoucment);
   app.useGlobalFilters(new SupertokensExceptionFilter());
+
+  app.useGlobalInterceptors(new TimingInterceptor)
 
   await app.listen(3000);
 }
